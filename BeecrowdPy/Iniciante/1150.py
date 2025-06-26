@@ -21,7 +21,7 @@ Imprima uma linha com um número inteiro que representa a quantidade de números
 x = int(input())
 z = None
 count = 0
-lista: list = []
+lista= []
 
 while (z == None or z < x):
     z = int(input())
