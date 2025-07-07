@@ -13,3 +13,28 @@ ser formatados em um campo de tamanho 3 justificados à direita e separados por 
 linha da matriz não deve haver espaços em branco. Após a impressão de cada matriz deve ser deixada uma linha em branco.
 
 """
+
+while True:
+    N = int(input())
+    if N == 0:
+        break
+
+    matriz = [[0 for _ in range(N)] for _ in range(N)] 
+    for i in range(N):
+        for j in range(N):
+            dist_top = i
+            dist_bottom = (N - 1) - i
+            dist_left = j
+            dist_right = (N - 1) - j
+
+            matriz[i][j] = min(dist_top, dist_bottom, dist_left, dist_right) + 1
+
+    for i in range(N):
+        for j in range(N):
+            if j == 0:
+                print(f"{matriz[i][j]:>3d}", end="")
+            else:
+                print(f" {matriz[i][j]:>3d}", end="")
+        print() 
+
+    print() 
